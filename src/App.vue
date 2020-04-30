@@ -1,28 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import util from '@/libs/util'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // HelloWorld
+  },
+  data() {
+    return {}
+  },
+  watch: {
+    '$i18n.locale': 'i18nHandle'
+  },
+  created () {
+    this.i18nHandle(this.$i18n.locale)
+  },
+  methods: {
+    i18nHandle (val, oldVal) {
+      this.loading = true
+      util.cookies.set('lang', val)
+      document.querySelector('html').setAttribute('lang', val)
+      console.log(oldVal)
+    }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #fff;
 }
 </style>

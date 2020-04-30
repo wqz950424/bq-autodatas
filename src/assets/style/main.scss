@@ -1,0 +1,199 @@
+.bq-main {
+    min-width:1366px;
+    position: relative;
+    .el-container {
+      overflow-y: hidden;
+      .el-header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+        background: linear-gradient(to right, #3d3393 0%, #33da9b 100%);
+        .head-nav {
+          position: relative;
+          height: 60px;
+          display: flex;
+          justify-content: space-between;
+          .logo {
+            width: 200px;
+            background: url('~@/assets/images/logo.png') center center no-repeat;
+            background-size: 100%;
+          }
+          // 导航的样式
+          .el-menu.el-menu--horizontal {
+            border-bottom: none; 
+            li[role="menuitem"] {
+              &:hover {
+                background-color: #434a50 !important;
+              }
+            }
+          }
+  
+          .lang-toggle {
+            width: 100px;
+            height: 100%;
+            line-height: 60px;
+            &:hover {
+              background-color: #434a50;
+            }
+            
+            .el-dropdown-link {
+              color: #fff;
+              cursor: pointer;
+              
+            }
+            .el-icon-arrow-down {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      .el-main {
+        margin-top: 60px;
+        .banner {
+          position: relative;
+          height: 560px;
+          // background: url('~@/assets/images/scroll-04.jpg') top center no-repeat;
+          background: linear-gradient(to right, #33da9b 0%,  #3d3393 100%);
+          .guide {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            .modules {
+              display: flex;
+              li {
+                color: #fff;
+                width: 25%;
+                height: 100px;
+                line-height: 100px;
+                display: flex;
+                .iconfont {
+                  font-size: 30px;
+                }
+                .item-name {
+                  margin-left: 30px;
+                  font-size: 18px;
+                }
+              }
+            }
+          }
+        }
+        .content-main {
+          color: #000;
+          .content-title {
+            font-size: 18px;
+            text-align: left;
+            padding: 20px 0;
+          }
+          .fresh-dynamic {
+            display: flex;
+            justify-content: space-between;
+            li {
+              width: 24%;
+              height: 180px;
+              border: 1px solid #000;
+              margin-bottom: 20px;
+              p {
+                margin-top: 35px;
+                padding: 10px 0;
+                font-size: 16px;
+                font-weight: 700;
+                a {
+                  font-size: 16px;
+                  font-weight: 400;
+                  color: #7395e5;
+                }
+              }
+            }
+          }
+
+          .solution {
+            display: flex;
+            li {
+              width: 14%;
+              height: 120px;
+              line-height: 60px;
+              .iconfont {
+                font-size: 40px;
+              }
+            }
+          }
+          .learn-more-detail {
+            margin-bottom: 20px;
+          }
+        }
+      }
+      .el-footer {
+        color: #000;
+        height: 300px !important;
+        background: linear-gradient(to right, #3d3393 0%, #33da9b 100%);
+        position: relative;
+        .foot-contain {
+          height: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 30px 0 50px 0;
+          box-sizing: border-box;
+          position: relative;
+          color: #fff;
+          ul {
+            li {
+              padding: 5px;
+              line-height: 25px;
+            }
+          }
+          h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+          }
+          .logo {
+            width:20%;
+            height: 60px;
+            background: url('~@/assets/images/logo.png');
+            background-size: contain;
+          }
+          .quora {
+            width:20%;
+            height: 100%;
+            text-align: left;
+          }
+          .contact {
+            width:30%;
+            height: 100%;
+            text-align: left;
+          }
+          .we-chat {
+            width:20%;
+            height: 100%;
+            .erweima {
+              width: 100px;
+              height: 100px;
+              background: url('~@/assets/images/code.jpg') no-repeat;
+              background-size: contain;
+              margin: 0 auto;
+            }
+          }
+        }
+        .tel {
+          position: fixed;
+          right: 40px;
+          bottom: 170px;
+          width: 40px;
+          height: 40px;
+          border-radius: 50px;
+          background: #545c64;
+          box-shadow: 3px 3px 5px 2px rgba(255,255,255, 1);
+          text-align: center;
+          line-height: 40px;
+          cursor: pointer;
+          &.iconfont {
+            color: #fff;
+            font-size: 24px;
+          }
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }

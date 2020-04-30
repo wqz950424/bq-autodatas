@@ -1,0 +1,39 @@
+/**
+对element样式的reset
+*/
+// 滚动条样式
+.el-scrollbar__thumb {
+  background-color: rgba(144, 147, 153, 0.8);
+}
+.el-scrollbar__bar.is-vertical>div {
+  width: 8px;
+  min-height: 20px;
+  top: 60px;
+}
+.el-scrollbar__wrap {
+  overflow-x: hidden;
+}
+.el-scrollbar__bar.is-horizontal {
+  overflow-x: hidden;
+  display: none;
+}
+
+
+// 布局容器的样式
+.el-main, .el-footer {
+  padding: 0;
+  overflow: hidden;
+}
+
+
+// 回到顶部
+.el-backtop {
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// popover 
+.el-popover.tel-popover {
+  width: 200px !important;
+}
