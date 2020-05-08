@@ -2,7 +2,7 @@
   <div class="bq-login">
     <div class="login-form">
       <div class="login-left">
-        <div class="login-logo" title="点击跳转到首页"></div>
+        <div class="login-logo" title="点击跳转到主页"></div>
         <div class="form-box">
           <el-form :model="loginForm" :rules="loginRules" ref="loginForm" label-width="80px">
             <el-form-item prop="username">
@@ -17,7 +17,7 @@
           </el-form>
         </div>
         <div class="links">
-          <span><a href="javascript:;" @click="$router.push({name: 'main'})">返回首页</a></span>
+          <span><a href="javascript:;" @click="$router.push({name: 'default-main'})">返回主页</a></span>
           <span><a href="javascript:;">新用户注册</a></span>
           <span><a href="javascript:;">忘记密码</a></span>
         </div>

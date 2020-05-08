@@ -1,9 +1,10 @@
-import layout from '@/layout'
-import teardown from "./modules/teardown"
-
 // 由于懒加载页面太多的话会造成webpack热更新太慢，所以开发环境不使用懒加载，只有生产环境使用懒加载
 const _import = require('@/libs/util.import.' + process.env.NODE_ENV)
 
+import layout from '@/layout'
+import teardown from "./modules/teardown"
+// 官网
+import mainPage from "./modules/main-page"
 
 /**
  * 在主框架内显示
@@ -18,7 +19,7 @@ const frameIn = [
         path: 'index',
         name: 'index',
         meta: {
-          title: '首页',
+          title: '主页',
           // auth: true
         },
         component: _import('system/index')
@@ -55,13 +56,34 @@ const errorPage = [
 /**
  * 官网
  */
-const mainPage = [
-  {
-    path: '/main',
-    name: 'main',
-    component: _import('system/main')
-  }
-]
+// const mainPage = [
+  //   {
+  //   path: '/main',
+  //   name: 'main',
+  //   component: _import('system/main'),
+  //   children:[
+  //     {
+  //       path: 'default-main',
+  //       name: 'default-main',
+  //       meta: {
+  //         title: '主页-默认',
+  //         // auth: true
+  //       },
+  //       component:  _import('system/main/components/default/default.vue')
+  //     },
+  //     // 官网拆解模块
+  //     {
+  //       path: 'teardown-main',
+  //       name: 'teardown-main',
+  //       meta: {
+  //         title: '主页-拆解',
+  //         // auth: true
+  //       },
+  //       component: teardownMain
+  //     },
+  //   ]
+  // }
+// ]
 
 // 重新组织后导出
 export default [

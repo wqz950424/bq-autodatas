@@ -3,12 +3,18 @@
 */
 // 滚动条样式
 .el-scrollbar__thumb {
-  background-color: rgba(144, 147, 153, 0.8);
+  // background-color: rgba(144, 147, 153, 0.8);
+  background:linear-gradient(to bottom, #3d3393 0%, #33da9b 50%,  #3d3393 100%);
+  opacity: .7;
+}
+.el-scrollbar__bar {
+  z-index: 10;
 }
 .el-scrollbar__bar.is-vertical>div {
   width: 8px;
   min-height: 20px;
   top: 60px;
+ 
 }
 .el-scrollbar__wrap {
   overflow-x: hidden;
@@ -36,4 +42,40 @@
 // popover 
 .el-popover.tel-popover {
   width: 200px !important;
+}
+
+// 导航
+.el-menu {
+  .el-submenu.is-opened,.el-submenu__title,.el-menu-item {
+    &:hover {
+      background-color: rgba(67, 74, 80, .6) !important;
+    }
+  }
+  .el-submenu__icon-arrow {
+    color: #fff;
+    margin-left: 12px;
+  }
+  .el-submenu__title {
+    padding: 0 30px;
+  }
+  .el-menu-item {
+    padding: 0 30px;
+  }
+}
+
+
+// 面包屑导航
+.el-breadcrumb {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+// 分割线
+.el-divider--horizontal {
+  margin:  0 0 35px 0;
+}
+.el-divider {
+  background:linear-gradient(to right, #3d3393 0%, #33da9b 100%);
 }

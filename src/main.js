@@ -26,8 +26,6 @@ const i18n = new VueI18n({
   // silentTranslationWarn: process.env.NODE_ENV === 'development'
 })
 
-console.log(i18n)
-
 new Vue({
   router,
   i18n,

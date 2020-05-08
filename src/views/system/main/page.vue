@@ -4,20 +4,47 @@
       <!-- <el-header :style="fixedStyle"> -->
       <el-header>
         <div class="head-nav banxin">
-          <div class="logo"></div>
+          <div class="logo" @click="toMain" title="回到主页"></div>
           <div class="nav">
             <el-menu 
               :default-active="activeIndex" 
               class="el-menu-demo" 
               mode="horizontal" 
               @select="handleSelect"
-              background-color="transparent"
+              background-color="#545c64"
               text-color="#fff"
               active-text-color="#ffd04b"
+              unique-opened
             >
-              <el-menu-item index="1">解决方案</el-menu-item>
-              <el-menu-item index="2">关于我们</el-menu-item>
-              <el-menu-item index="3">支持</el-menu-item>
+              <!-- 根据自定的id进行当前页面锚点跳转 -->
+              <el-submenu index="solution">
+                <template slot="title">解决方案</template>
+                <el-menu-item index="#platform">对标平台</el-menu-item>
+                <el-menu-item index="#service">对标服务</el-menu-item>
+                <el-submenu index="content">
+                  <template slot="title">对标内容</template>
+                  <el-menu-item index="#content-1">选项1</el-menu-item>
+                  <el-menu-item index="#content-2">选项2</el-menu-item>
+                  <el-menu-item index="#content-3">选项3</el-menu-item>
+                  <el-menu-item index="#content-4">选项4</el-menu-item>
+                  <el-menu-item index="#content-5">选项5</el-menu-item>
+                </el-submenu>
+              </el-submenu>
+              <el-submenu index="about-us">
+                <template slot="title">关于我们</template>
+                <el-menu-item index="#distribute">全球分布</el-menu-item>
+                <el-menu-item index="2-2">CEO介绍</el-menu-item>
+                <el-menu-item index="2-3">团队介绍(中外合作)</el-menu-item>
+                <el-menu-item index="2-4">资质证书</el-menu-item>
+              </el-submenu>
+              <el-submenu index="3">
+                <template slot="title">支持</template>
+                <el-menu-item index="3-1">解决方案搜索</el-menu-item>
+                <el-menu-item index="3-2">下载</el-menu-item>
+                <el-menu-item index="3-3">支持案例</el-menu-item>
+                <el-menu-item index="3-4">通知</el-menu-item>
+                <el-menu-item index="3-5">AUTODATAS支持指南</el-menu-item>
+              </el-submenu>
               <el-menu-item index="4">联系我们</el-menu-item>
               <el-menu-item index="5">登陆</el-menu-item>
               <el-menu-item index="6">注册</el-menu-item>
@@ -36,155 +63,22 @@
           </div>
         </div>
       </el-header>
-      <el-scrollbar  style="height:100%">
-        <el-main>
-          <div class="banner">
-            <div class="guide">
-              <ul class="modules banxin">
-                <li class="item">
-                  <div class="iconfont icon-bq-caidan-copy"></div>
-                  <div class="item-name">Vehicle</div>
-                </li>
-                <li class="item">
-                  <div class="iconfont icon-bq-bianji"></div>
-                  <div class="item-name">Vehicle</div>
-                </li>
-                <li class="item">
-                  <div class="iconfont  icon-bq-caidan-copy"></div>
-                  <div class="item-name">Vehicle</div>
-                </li>
-                <li class="item">
-                  <div class="iconfont icon-bq-bianji"></div>
-                  <div class="item-name">Vehicle</div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="content-main banxin">
-            <h3 class="content-title">新鲜动态</h3>
-            <ul class="fresh-dynamic">
-              <li>
-                <p>最新展会</p>
-                <p><a href="#">了解更多</a></p>
-              </li>
-              <li>
-                <p>最新展会</p>
-                <p><a href="#">了解更多</a></p>
-              </li>
-              <li>
-                <p>最新展会</p>
-                <p><a href="#">了解更多</a></p>
-              </li>
-              <li>
-                <p>最新展会</p>
-                <p><a href="#">了解更多</a></p>
-              </li>
-            </ul>
-            <h3 class="content-title">七大解决方案</h3>
-            <ul class="solution">
-              <li>
-                <div class="iconfont icon-bq-caidan-copy"></div>
-                <div class="item-name">Teardown</div>
-              </li>
-              <li>
-                <div class="iconfont icon-bq-caidan-copy"></div>
-                <div class="item-name">Teardown</div>
-              </li>
-              <li>
-                <div class="iconfont icon-bq-caidan-copy"></div>
-                <div class="item-name">Teardown</div>
-              </li>
-              <li>
-                <div class="iconfont icon-bq-caidan-copy"></div>
-                <div class="item-name">Teardown</div>
-              </li>
-              <li>
-                <div class="iconfont icon-bq-caidan-copy"></div>
-                <div class="item-name">Teardown</div>
-              </li>
-              <li>
-                <div class="iconfont icon-bq-caidan-copy"></div>
-                <div class="item-name">Teardown</div>
-              </li>
-              <li>
-                <div class="iconfont icon-bq-caidan-copy"></div>
-                <div class="item-name">Teardown</div>
-              </li>
-            </ul>
-            <el-button type="primary" class="learn-more-detail">了解详细信息</el-button>
-          </div>
-        </el-main>
-        <el-footer>
-          <div class="foot-contain banxin">
-            <div class="logo"></div>
-            <div class="quora">
-              <h4>Quora</h4>
-              <ul>
-                <li>行业资讯</li>
-                <li>数据共享</li>
-                <li>常见问题</li>
-                <li>联系我们</li>
-              </ul>
-            </div>
-            <div class="contact">
-              <h4>联系我们</h4>
-              <ul>
-                <li>Tel : 139-1739-7985</li>
-                <li>Email : service@autodatas.net</li>
-                <li>Headquarter : No.33 Lushun Rd., LuYuan Industrial Park, PuDong District, Shanghai</li>
-              </ul>
-            </div>
-            <div class="we-chat">
-              <h4>WeChat</h4>
-              <div class="erweima"></div>
-            </div>
-            <bq-copy-right></bq-copy-right>
-          </div>
-          <el-popover
-            popper-class="tel-popover"
-            placement="right"
-            width="400"
-            trigger="hover">
-            <div>
-              Tel : 139-1739-7985
-            </div>
-            <div slot="reference" class="tel iconfont icon-bq-dianhua"></div>
-          </el-popover>
-          <el-backtop target=".bq-main .el-scrollbar__wrap" :bottom="100">
-            <div
-              style="{
-                height: 100%;
-                width: 100%;
-                background: #545c64;
-                box-shadow: 3px 3px 5px 2px rgba(255,255,255, 1);
-                text-align: center;
-                line-height: 40px;
-                color: #fff;
-                border-radius: 20px;
-              }"
-            >
-              UP
-            </div>
-          </el-backtop>
-        </el-footer>
-      </el-scrollbar>
+      <keep-alive>
+        <router-view />
+      </keep-alive>
     </el-container>
   </div>
 </template>
 
 <script>
-import BqCopyRight from '@/components/copy-right'
 export default {
   name: 'BQMain',
-  components: {
-    BqCopyRight
-  },
   data() {
     return {
-      activeIndex: '1',
+      activeIndex: '',
       fixedStyle: {
         background: 'unset'
-      }
+      },
     }
   },
   mounted() {
@@ -202,7 +96,19 @@ export default {
     },
 
     handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+      this.activeIndex = key
+      // 先判断在不在当前页面
+      if(! this.$route.path.includes(keyPath[0])) { // 不在当前页面
+        this.$router.push({name: keyPath[0]})
+      } 
+      this.$nextTick(() => {
+        if(document.querySelector(key)) {
+          document.querySelector(key).scrollIntoView({
+            block: 'start',
+            behavior: 'smooth'
+          })
+        }
+      })
     },
 
     // 切换语言
@@ -216,6 +122,11 @@ export default {
           break;
       }
     },
+
+    toMain() {
+      this.$router.push({name: 'default-main'})
+      this.activeIndex = ''
+    }
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.toggleFixedStyle, false)
