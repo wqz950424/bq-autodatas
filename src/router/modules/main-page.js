@@ -75,6 +75,16 @@ export default [
           },
           component: _import('system/main/components/innovation-main/innovation-main.vue')
         },
+        // 官网Statistics
+        {
+          path: '/main/statistics-main',
+          name: 'statistics-main',
+          meta: {
+            title: '主页-statistics',
+            // auth: true
+          },
+          component: _import('system/main/components/statistics-main/statistics-main.vue')
+        },
         
         // 解决方案
         {

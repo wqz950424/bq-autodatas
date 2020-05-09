@@ -30,13 +30,14 @@
                   <el-menu-item index="#content-5">选项5</el-menu-item>
                 </el-submenu>
               </el-submenu>
-              <el-submenu index="about-us">
+              <!-- <el-submenu index="about-us">
                 <template slot="title">关于我们</template>
                 <el-menu-item index="#distribute">全球分布</el-menu-item>
                 <el-menu-item index="2-2">CEO介绍</el-menu-item>
                 <el-menu-item index="2-3">团队介绍(中外合作)</el-menu-item>
                 <el-menu-item index="2-4">资质证书</el-menu-item>
-              </el-submenu>
+              </el-submenu> -->
+              <el-menu-item index="about-us">关于我们</el-menu-item>
               <el-submenu index="3">
                 <template slot="title">支持</template>
                 <el-menu-item index="3-1">解决方案搜索</el-menu-item>

@@ -24,7 +24,7 @@
         </div>
         <div class="right"></div>
       </div>
-      <el-divider content-position="center" class="banxin">AUTODATAS</el-divider>
+      <!-- <el-divider content-position="center" class="banxin">AUTODATAS</el-divider> -->
       <div class="global banxin">
         <h1>全 球 化 视 角</h1>
         <div class="global-item">
@@ -68,7 +68,6 @@
         </div>
       </div>
       <div class="distribute"></div>
-      <a name="distribute" id="distribute">关于我们</a>
       <bq-copy-right></bq-copy-right>
     </div>
   </el-scrollbar>
@@ -91,7 +90,7 @@ export default {
   height: calc(100% - 60px);
   position: relative;
   .about-us-banner {
-    padding: 40px 0 10px 0;
+    padding: 40px 0 50px 0;
     height: 400px;
     display: flex;
     .left {
@@ -112,17 +111,22 @@ export default {
         }
         .eng {
           padding-left: 80px;
-          font-size: 20px;
+          font-size: 24px;
           color: #59595a;
           font-weight: 700;
           span {
             color: red;
           }
+          p {
+            text-align: left;
+            line-height: 35px;
+            font-size: 26px;
+          }
         }
       }
       p {
         text-align: left;
-        line-height: 45px;
+        line-height: 30px;
         font-size: 18px;
       }
     }

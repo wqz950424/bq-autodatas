@@ -1,11 +1,11 @@
 <template>
-  <div class="bq-main-innovation">
+  <div class="bq-main-statistics">
     <el-container>
       <el-aside width="200px">
-        <bq-modules-list high-light="innovation"></bq-modules-list>
+        <bq-modules-list high-light="statistics"></bq-modules-list>
       </el-aside>
       <el-main class="mainpage-main">
-        <div class="innovation-content">Innovation模块内容</div>
+        <div class="statistics-content">Statistics</div>
       </el-main>
     </el-container>
   </div>
@@ -14,7 +14,7 @@
 <script>
 import bqModulesList from '../modulesList'
 export default {
-  name: 'BQMainInnovation',
+  name: 'BQMainStatistics',
   components:{
     bqModulesList
   }
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .bq-main-innovation {
+  .bq-main-statistics {
     margin-top: 60px;
     height: calc(100% - 60px);
     .el-container{

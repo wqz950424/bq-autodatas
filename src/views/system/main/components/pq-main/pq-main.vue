@@ -5,8 +5,6 @@
         <bq-modules-list high-light="pq"></bq-modules-list>
       </el-aside>
       <el-main class="mainpage-main">
-        <bq-crumb item-name="PQ"></bq-crumb>
-        <el-divider content-position="center">AUTODATAS</el-divider>
         <div class="pq-content">PQ内容</div>
       </el-main>
     </el-container>
@@ -14,12 +12,10 @@
 </template>
 
 <script>
-import bqCrumb from '../breadCrumb'
 import bqModulesList from '../modulesList'
 export default {
   name: 'BQMainPQ',
   components:{
-    bqCrumb,
     bqModulesList
   }
 }

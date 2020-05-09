@@ -73,28 +73,28 @@
             <div class="iconfont performance"></div>
             <div class="item-name">Performance</div>
           </li>
-          <li class="solution-item" @click="toWhichSolu('statistics')">
-            <div class="iconfont statistics"></div>
-            <div class="item-name">Statistics</div>
-          </li>
           <li class="solution-item" @click="toWhichSolu('section')">
             <div class="iconfont section"></div>
             <div class="item-name">Section</div>
-          </li>
-          <li class="solution-item" @click="toWhichSolu('costing')">
-            <div class="iconfont costing"></div>
-            <div class="item-name">Costing</div>
           </li>
           <li class="solution-item" @click="toWhichSolu('pq')">
             <div class="iconfont pq"></div>
             <div class="item-name">PQ</div>
           </li>
+          <li class="solution-item" @click="toWhichSolu('costing')">
+            <div class="iconfont costing"></div>
+            <div class="item-name">Costing</div>
+          </li>
           <li class="solution-item" @click="toWhichSolu('innovation')">
             <div class="iconfont innovation"></div>
             <div class="item-name">Innovation</div>
           </li>
+          <li class="solution-item" @click="toWhichSolu('statistics')">
+            <div class="iconfont statistics"></div>
+            <div class="item-name">Statistics</div>
+          </li>
         </ul>
-        <el-button type="primary" class="learn-more-detail">了解详细信息</el-button>
+        <el-button type="primary" class="learn-more-detail" @click="$router.push({name: 'teardown-main'})">了解详细信息</el-button>
       </div>
     </el-main>
     <el-footer>
@@ -127,11 +127,12 @@
         popper-class="tel-popover"
         placement="right"
         width="400"
-        trigger="hover">
+        trigger="click">
         <div>
           Tel : 139-1739-7985
         </div>
-        <div slot="reference" class="tel iconfont icon-bq-dianhua"></div>
+        <!-- <div slot="reference" class="tel iconfont icon-bq-dianhua"></div> -->
+        <el-button type="primary" slot="reference" class="tel">Need help? Contact us</el-button>
       </el-popover>
       <el-backtop target=".bq-main .el-scrollbar__wrap" :bottom="100">
         <div

@@ -5,8 +5,6 @@
         <bq-modules-list high-light="performance"></bq-modules-list>
       </el-aside>
       <el-main class="mainpage-main">
-        <bq-crumb item-name="performance"></bq-crumb>
-        <el-divider content-position="center">AUTODATAS</el-divider>
         <div class="teardown-content">Performance</div>
       </el-main>
     </el-container>
@@ -14,12 +12,10 @@
 </template>
 
 <script>
-import bqCrumb from '../breadCrumb'
 import bqModulesList from '../modulesList'
 export default {
   name: 'BQMainPerformance',
   components:{
-    bqCrumb,
     bqModulesList
   }
 }

@@ -1,32 +1,32 @@
 <template>
   <ul class="bq-modules-list">
     <li>
-      <i ref="teardown" class="iconfont icon-bq-caidan-copy" @click="toWhichSolu('teardown')"></i>
+      <div ref="teardown" class="iconfont teardown" @click="toWhichSolu('teardown')"></div>
       <div>Teardown</div>  
     </li>
     <li>
-      <i ref="performance" class="iconfont icon-bq-caidan-copy" @click="toWhichSolu('performance')"></i>
+      <div ref="performance" class="iconfont performance" @click="toWhichSolu('performance')"></div>
       <div>Performance</div>  
     </li>
     <li>
-      <i ref="2d/3d" class="iconfont icon-bq-caidan-copy" @click="toWhichSolu('2d/3d')"></i>
-      <div>2D/3D</div>  
-    </li>
-    <li>
-      <i ref="section" class="iconfont icon-bq-caidan-copy" @click="toWhichSolu('section')"></i>
+      <div ref="section" class="iconfont statistics" @click="toWhichSolu('section')"></div>
       <div>Section</div>  
     </li>
     <li>
-      <i ref="costing" class="iconfont icon-bq-caidan-copy" @click="toWhichSolu('costing')"></i>
-      <div>Costing</div>  
-    </li>
-    <li>
-      <i ref="pq" class="iconfont icon-bq-caidan-copy" @click="toWhichSolu('pq')"></i>
+      <div ref="pq" class="iconfont section" @click="toWhichSolu('pq')"></div>
       <div>PQ</div>  
     </li>
     <li>
-      <i ref="innovation" class="iconfont icon-bq-caidan-copy" @click="toWhichSolu('innovation')"></i>
+      <div ref="costing" class="iconfont costing" @click="toWhichSolu('costing')"></div>
+      <div>Costing</div>  
+    </li>
+    <li>
+      <div ref="innovation" class="iconfont pq" @click="toWhichSolu('innovation')"></div>
       <div>Innovation</div>  
+    </li>
+    <li>
+      <div ref="statistics" class="iconfont innovation" @click="toWhichSolu('statistics')"></div>
+      <div>Statistics</div>  
     </li>
   </ul>
 </template>
@@ -63,9 +63,6 @@ export default {
         case "performance":
           this.$router.push({name: 'performance-main'})
           break;
-        case "2d/3d":
-          console.log('2d/3d')
-          break;
         case "section":
           this.$router.push({name: 'section-main'})
           break;
@@ -78,6 +75,9 @@ export default {
         case "innovation":
           this.$router.push({name: 'innovation-main'})
           break;
+        case "statistics":
+          this.$router.push({name: 'statistics-main'})
+          break;
       } 
     }
   }
@@ -87,11 +87,72 @@ export default {
 <style lang="scss">
 .bq-modules-list {
   li{
+    padding: 25px 0;
+    cursor: pointer;
     .iconfont {
-      font-size: 40px;
-      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
     }
-    padding: 33px 0;
+    .teardown {
+      background: url('~@/assets/images/main-seven-icon/teardown-02.png') center center no-repeat;
+      background-size: contain;
+    }
+    .performance {
+      background: url('~@/assets/images/main-seven-icon/performance-02.png') center center no-repeat;
+      background-size: contain;
+    }
+    .statistics {
+      background: url('~@/assets/images/main-seven-icon/statistics-02.png') center center no-repeat;
+      background-size: contain;
+    }
+    .section {
+      background: url('~@/assets/images/main-seven-icon/section-02.png') center center no-repeat;
+      background-size: contain;
+    }
+    .costing {
+      background: url('~@/assets/images/main-seven-icon/costing-02.png') center center no-repeat;
+      background-size: contain;
+    }
+    .pq {
+      background: url('~@/assets/images/main-seven-icon/PQ-02.png') center center no-repeat;
+      background-size: contain;
+    }
+    .innovation {
+      background: url('~@/assets/images/main-seven-icon/innovation-02.png') center center no-repeat;
+      background-size: contain;
+    }
+    &:hover {
+      color: #fff;
+      .teardown {
+        background: url('~@/assets/images/main-seven-icon/teardown-01.png') center center no-repeat;
+        background-size: contain;
+      }
+      .performance {
+        background: url('~@/assets/images/main-seven-icon/performance-01.png') center center no-repeat;
+        background-size: contain;
+      }
+      .statistics {
+        background: url('~@/assets/images/main-seven-icon/statistics-01.png') center center no-repeat;
+        background-size: contain;
+      }
+      .section {
+        background: url('~@/assets/images/main-seven-icon/section-01.png') center center no-repeat;
+        background-size: contain;
+      }
+      .costing {
+        background: url('~@/assets/images/main-seven-icon/costing-01.png') center center no-repeat;
+        background-size: contain;
+      }
+      .pq {
+        background: url('~@/assets/images/main-seven-icon/PQ-01.png') center center no-repeat;
+        background-size: contain;
+      }
+      .innovation {
+        background: url('~@/assets/images/main-seven-icon/innovation-01.png') center center no-repeat;
+        background-size: contain;
+      }
+    }
   }
 }
 </style>

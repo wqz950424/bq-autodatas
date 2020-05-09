@@ -77,13 +77,13 @@
               background: url('~@/assets/images/banner/banner.jpg');
             }
             .carousel-item.item2 {
-              background: url('~@/assets/images/banner/banner.jpg');
+              background: url('~@/assets/images/banner/banner2.jpg');
             }
             .carousel-item.item3 {
               background: url('~@/assets/images/banner/banner.jpg');
             }
             .carousel-item.item4 {
-              background: url('~@/assets/images/banner/banner.jpg');
+              background: url('~@/assets/images/banner/banner2.jpg');
             }
           }
           .guide {
@@ -131,7 +131,7 @@
           .content-title {
             font-size: 18px;
             text-align: left;
-            padding: 20px 0;
+            padding: 60px 0;
           }
           .fresh-dynamic {
             display: flex;
@@ -289,23 +289,8 @@
         }
         .tel {
           position: fixed;
-          right: 40px;
-          bottom: 170px;
-          width: 40px;
-          height: 40px;
-          border-radius: 50px;
-          background: #545c64;
-          box-shadow: 3px 3px 5px 2px rgba(255,255,255, 1);
-          text-align: center;
-          line-height: 40px;
-          cursor: pointer;
-          &.iconfont {
-            color: #fff;
-            font-size: 24px;
-          }
-          &:hover {
-            opacity: 0.8;
-          }
+          right: 20px;
+          bottom: 40px;
         }
       }
     }
