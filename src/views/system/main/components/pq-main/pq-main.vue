@@ -28,7 +28,8 @@ export default {
     .el-container{
       height: 100%;
       .el-aside {
-        background: linear-gradient(to bottom, #33da9b 0%,  #3d3393 100%);
+        // background: linear-gradient(to bottom, #31CCB1 0%,  #364CA1 100%);
+        background: linear-gradient(to bottom,   #364CA1  0%, #31CCB1 100%,);
       }
       .el-main.mainpage-main {
         margin-top: 0;

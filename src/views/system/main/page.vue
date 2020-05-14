@@ -17,6 +17,7 @@
               unique-opened
             >
               <!-- 根据自定的id进行当前页面锚点跳转 -->
+              <el-menu-item index="#model_Y">TESLA MODEL Y</el-menu-item>
               <el-submenu index="solution">
                 <template slot="title">解决方案</template>
                 <el-menu-item index="#platform">对标平台</el-menu-item>
@@ -30,13 +31,6 @@
                   <el-menu-item index="#content-5">选项5</el-menu-item>
                 </el-submenu>
               </el-submenu>
-              <!-- <el-submenu index="about-us">
-                <template slot="title">关于我们</template>
-                <el-menu-item index="#distribute">全球分布</el-menu-item>
-                <el-menu-item index="2-2">CEO介绍</el-menu-item>
-                <el-menu-item index="2-3">团队介绍(中外合作)</el-menu-item>
-                <el-menu-item index="2-4">资质证书</el-menu-item>
-              </el-submenu> -->
               <el-menu-item index="about-us">关于我们</el-menu-item>
               <el-submenu index="3">
                 <template slot="title">支持</template>
@@ -47,14 +41,14 @@
                 <el-menu-item index="3-5">AUTODATAS支持指南</el-menu-item>
               </el-submenu>
               <el-menu-item index="4">联系我们</el-menu-item>
-              <el-menu-item index="5">登陆</el-menu-item>
-              <el-menu-item index="6">注册</el-menu-item>
+              <el-menu-item index="sign-in">登陆</el-menu-item>
+              <el-menu-item index="sign-up">注册</el-menu-item>
             </el-menu>
           </div>
           <div class="lang-toggle">
             <el-dropdown trigger="click" placement="bottom"  @command="handleLangCommand">
               <span class="el-dropdown-link">
-              语言（C/E）
+              {{$i18n.locale == 'zh' ? '简体中文' : 'English'}}
               </span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item command="zh">简体中文</el-dropdown-item>
@@ -90,7 +84,7 @@ export default {
     toggleFixedStyle () {
       let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
       if(scrollTop > 60) {
-        this.fixedStyle.background = 'linear-gradient(to right, #3d58a2 0%, #33da9b 100%);'
+        this.fixedStyle.background = 'linear-gradient(to right, #3d58a2 0%, #31CCB1 100%);'
       } else {
         this.fixedStyle.background = 'unset'
       }
@@ -99,17 +93,43 @@ export default {
     handleSelect(key, keyPath) {
       this.activeIndex = key
       // 先判断在不在当前页面
-      if(! this.$route.path.includes(keyPath[0])) { // 不在当前页面
-        this.$router.push({name: keyPath[0]})
-      } 
-      this.$nextTick(() => {
-        if(document.querySelector(key)) {
-          document.querySelector(key).scrollIntoView({
-            block: 'start',
-            behavior: 'smooth'
+      if(key == "#model_Y") {
+        console.log(key,this.$route)    
+        if(this.$route.hash.includes('#model_Y')) {
+          this.$nextTick(() => {
+            if(document.querySelector('#model_Y')) {
+              document.querySelector('#model_Y').scrollIntoView({
+                block: 'start',
+                behavior: 'smooth'
+              })
+            }
           })
+        }else {
+          this.$router.push({path:'/main/default-main#model_Y'})
         }
-      })
+      }
+      // else if(key!== 'model_Y' &&  ! this.$route.path.includes(keyPath[0])) { // 不在当前页面
+      //   this.$router.push({name: keyPath[0]})
+      // }
+      else if(key == 'about-us' || key == '#platform') {
+        this.$router.push({name: keyPath[0]})
+        this.$nextTick(() => {
+          if(document.querySelector(key)) {
+            document.querySelector(key).scrollIntoView({
+              block: 'start',
+              behavior: 'smooth'
+            })
+          }
+        })
+      }
+
+      else if(key == 'sign-in') {
+        window.location.href="http://www.autodatas.net/auth/users/sign_in"
+      }
+      else if(key == 'sign-up') {
+        window.location.href="http://www.autodatas.net/auth/users/sign_up"
+      }
+      
     },
 
     // 切换语言
@@ -129,8 +149,8 @@ export default {
       this.activeIndex = ''
     }
   },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.toggleFixedStyle, false)
-  }
+  // beforeDestroy() {
+  //   window.removeEventListener('scroll', this.toggleFixedStyle, false)
+  // }
 }
 </script>

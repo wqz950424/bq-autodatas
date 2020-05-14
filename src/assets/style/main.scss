@@ -1,299 +1,417 @@
 .bq-main {
-    min-width:1366px;
-    position: relative;
-    .el-container {
-      overflow-y: hidden;
-      .el-header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 100;
-        background: linear-gradient(to right, #3d3393 0%, #33da9b 100%);
-        .head-nav {
-          position: relative;
-          height: 60px;
-          display: flex;
-          justify-content: space-between;
-          .logo {
-            width: 200px;
-            background: url('~@/assets/images/logo.png') center center no-repeat;
-            background-size: 100%;
+  min-width: 1366px;
+  position: relative;
+  .el-scrollbar.video-list-scroll {
+    .el-scrollbar__bar.is-vertical>div {
+      top: 0px;
+    }
+  }
+  >.el-container {
+    overflow-y: hidden;
+    // padding-bottom: 10px;
+    .el-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: linear-gradient(to right, #364ca1 0%, #31ccb1 100%);
+      // background-color: transparent;
+      .head-nav {
+        position: relative;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        .logo {
+          width: 200px;
+          background: url("~@/assets/images/logo.png") center center no-repeat;
+          background-size: 100%;
+          cursor: pointer;
+        }
+        // 导航的样式
+        .el-menu.el-menu--horizontal.el-menu-demo {
+          border-bottom: none;
+          .el-submenu__title,
+          .el-menu-item {
+            background-color: transparent !important;
+          }
+          background-color: transparent !important;
+          .el-menu-item:hover {
+            background-color: rgba(67, 74, 80, 0.4) !important;
+          }
+        }
+
+        // 切换中英文
+        .lang-toggle {
+          width: 100px;
+          height: 100%;
+          line-height: 60px;
+          &:hover {
+            background-color: rgba(67, 74, 80, 0.4) !important;
+          }
+
+          .el-dropdown-link {
+            color: #fff;
             cursor: pointer;
           }
-          // 导航的样式
-          .el-menu.el-menu--horizontal.el-menu-demo {
-            border-bottom: none; 
-            .el-submenu__title, .el-menu-item {
-              background-color: transparent !important;
-            }
-            background-color: transparent !important;
-            .el-menu-item:hover {
-              background-color: rgba(67, 74, 80, .4) !important;
-            }
+          .el-icon-arrow-down {
+            font-size: 12px;
           }
-
-          // 切换中英文
-          .lang-toggle {
-            width: 100px;
-            height: 100%;
-            line-height: 60px;
-            &:hover {
-              background-color:  rgba(67,74,80, .4) !important;
-            }
-            
-            .el-dropdown-link {
-              color: #fff;
-              cursor: pointer;
-              
-            }
-            .el-icon-arrow-down {
-              font-size: 12px;
-            }
-          }
-        }
-      }
-      .el-main {
-        margin-top: 60px;
-        .banner {
-          position: relative;
-          height: 560px;
-          // background: url('~@/assets/images/scroll-04.jpg') top center no-repeat;
-          // background: linear-gradient(to right, #33da9b 0%,  #3d3393 100%);
-          .el-carousel {
-            width: 100%;
-            height: 100%;
-            .el-carousel__container {
-              height: 100%;
-            }
-            .el-carousel__indicators {
-              display: none;
-            }
-            .carousel-item {
-              width: 100%;
-              height: 100%;
-              background-size: 100%;
-            }
-            .carousel-item.item1 {
-              background: url('~@/assets/images/banner/banner.jpg');
-            }
-            .carousel-item.item2 {
-              background: url('~@/assets/images/banner/banner2.jpg');
-            }
-            .carousel-item.item3 {
-              background: url('~@/assets/images/banner/banner.jpg');
-            }
-            .carousel-item.item4 {
-              background: url('~@/assets/images/banner/banner2.jpg');
-            }
-          }
-          .guide {
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            z-index: 10;
-            .modules {
-              display: flex;
-              li {
-                color: #fff;
-                width: 25%;
-                height: 140px;
-                line-height: 140px;
-                display: flex;
-                .vehicle {
-                  background: url('~@/assets/images/main-icon/Vehicles-01.png') no-repeat;
-                }
-                .search {
-                  background: url('~@/assets/images/main-icon/Search-01.png') no-repeat;
-                }
-                .comparison {
-                  background: url('~@/assets/images/main-icon/Comparison-01.png') no-repeat;
-                }
-                .report {
-                  background: url('~@/assets/images/main-icon/Report-01.png') no-repeat;
-                }
-                .icon {
-                  width: 120px;
-                  height: 90px;
-                  background-size: contain;
-                  position: relative;
-                  top: 30px;
-                }
-                .item-name {
-                  margin-left: 20px;
-                  font-size: 18px;
-                }
-              }
-            }
-          }
-        }
-        .content-main {
-          color: #000;
-          .content-title {
-            font-size: 18px;
-            text-align: left;
-            padding: 60px 0;
-          }
-          .fresh-dynamic {
-            display: flex;
-            justify-content: space-between;
-            li {
-              width: 24%;
-              height: 180px;
-              border: 1px solid #000;
-              margin-bottom: 20px;
-              p {
-                margin-top: 35px;
-                padding: 10px 0;
-                font-size: 16px;
-                font-weight: 700;
-                a {
-                  font-size: 16px;
-                  font-weight: 400;
-                  color: #7395e5;
-                }
-              }
-            }
-          }
-
-          .solution {
-            display: flex;
-            li.solution-item {
-              width: 14%;
-              height: 120px;
-              line-height: 40px;
-              cursor: pointer;
-              .iconfont {
-                width: 80px;
-                height: 80px;
-                margin: 0 auto;
-              }
-              .teardown {
-                background: url('~@/assets/images/main-seven-icon/teardown-02.png') center center no-repeat;
-                background-size: contain;
-              }
-              .performance {
-                background: url('~@/assets/images/main-seven-icon/performance-02.png') center center no-repeat;
-                background-size: contain;
-              }
-              .statistics {
-                background: url('~@/assets/images/main-seven-icon/statistics-02.png') center center no-repeat;
-                background-size: contain;
-              }
-              .section {
-                background: url('~@/assets/images/main-seven-icon/section-02.png') center center no-repeat;
-                background-size: contain;
-              }
-              .costing {
-                background: url('~@/assets/images/main-seven-icon/costing-02.png') center center no-repeat;
-                background-size: contain;
-              }
-              .pq {
-                background: url('~@/assets/images/main-seven-icon/PQ-02.png') center center no-repeat;
-                background-size: contain;
-              }
-              .innovation {
-                background: url('~@/assets/images/main-seven-icon/innovation-02.png') center center no-repeat;
-                background-size: contain;
-              }
-              &:hover {
-                border-radius: 8px;
-                color: #fff;
-                background:linear-gradient(to right, #3d3393 0%, #33da9b 100%);
-                box-shadow: 5px 5px 5px 5px rgba(67, 74, 80, 1);
-                .teardown {
-                  background: url('~@/assets/images/main-seven-icon/teardown-01.png') center center no-repeat;
-                  background-size: contain;
-                }
-                .performance {
-                  background: url('~@/assets/images/main-seven-icon/performance-01.png') center center no-repeat;
-                  background-size: contain;
-                }
-                .statistics {
-                  background: url('~@/assets/images/main-seven-icon/statistics-01.png') center center no-repeat;
-                  background-size: contain;
-                }
-                .section {
-                  background: url('~@/assets/images/main-seven-icon/section-01.png') center center no-repeat;
-                  background-size: contain;
-                }
-                .costing {
-                  background: url('~@/assets/images/main-seven-icon/costing-01.png') center center no-repeat;
-                  background-size: contain;
-                }
-                .pq {
-                  background: url('~@/assets/images/main-seven-icon/PQ-01.png') center center no-repeat;
-                  background-size: contain;
-                }
-                .innovation {
-                  background: url('~@/assets/images/main-seven-icon/innovation-01.png') center center no-repeat;
-                  background-size: contain;
-                }
-              }
-            }
-          }
-          .learn-more-detail {
-            margin: 20px 0;
-          }
-        }
-      }
-      .el-footer {
-        color: #000;
-        height: 300px !important;
-        background: linear-gradient(to right, #3d3393 0%, #33da9b 100%);
-        position: relative;
-        .foot-contain {
-          height: 100%;
-          display: flex;
-          justify-content: space-between;
-          padding: 30px 0 50px 0;
-          box-sizing: border-box;
-          position: relative;
-          color: #fff;
-          ul {
-            li {
-              padding: 5px;
-              line-height: 25px;
-            }
-          }
-          h4 {
-            font-size: 16px;
-            margin-bottom: 20px;
-          }
-          .logo {
-            width:20%;
-            height: 60px;
-            background: url('~@/assets/images/logo.png');
-            background-size: contain;
-          }
-          .quora {
-            width:20%;
-            height: 100%;
-            text-align: left;
-          }
-          .contact {
-            width:30%;
-            height: 100%;
-            text-align: left;
-          }
-          .we-chat {
-            width:20%;
-            height: 100%;
-            .erweima {
-              width: 100px;
-              height: 100px;
-              background: url('~@/assets/images/code.jpg') no-repeat;
-              background-size: contain;
-              margin: 0 auto;
-            }
-          }
-        }
-        .tel {
-          position: fixed;
-          right: 20px;
-          bottom: 40px;
         }
       }
     }
+    .el-main {
+      margin-top: 60px;
+      .banner {
+        position: relative;
+        height: 560px;
+        // background: url('~@/assets/images/scroll-04.jpg') top center no-repeat;
+        // background: linear-gradient(to right, #31CCB1 0%,  #364CA1 100%);
+        .el-carousel {
+          width: 100%;
+          height: 100%;
+          .el-carousel__container {
+            height: 100%;
+          }
+          .el-carousel__indicators {
+            display: none;
+          }
+          .carousel-item {
+            width: 100%;
+            height: 100%;
+            background-size: 100%;
+          }
+          .carousel-item.item1 {
+            background: url("~@/assets/images/banner/banner.jpg");
+          }
+          .carousel-item.item2 {
+            background: url("~@/assets/images/banner/banner2.jpg");
+          }
+          .carousel-item.item3 {
+            background: url("~@/assets/images/banner/banner.jpg");
+          }
+          .carousel-item.item4 {
+            background: url("~@/assets/images/banner/banner2.jpg");
+          }
+        }
+        .guide {
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          z-index: 10;
+          .modules {
+            display: flex;
+            li {
+              color: #fff;
+              width: 25%;
+              height: 125px;
+              line-height: 140px;
+              display: flex;
+              cursor: pointer;
+              .vehicle {
+                background: url("~@/assets/images/main-icon/Vehicles-01.png")
+                  no-repeat;
+              }
+              .search {
+                background: url("~@/assets/images/main-icon/Search-01.png")
+                  no-repeat;
+              }
+              .comparison {
+                background: url("~@/assets/images/main-icon/Comparison-01.png")
+                  no-repeat;
+              }
+              .report {
+                background: url("~@/assets/images/main-icon/Report-01.png")
+                  no-repeat;
+              }
+              .icon {
+                width: 120px;
+                height: 90px;
+                background-size: contain;
+                position: relative;
+                top: 30px;
+              }
+              .item-name {
+                margin-left: 20px;
+                font-size: 18px;
+              }
+            }
+          }
+          .el-button {
+            position: absolute;
+            right: 20px;
+            top: 50px;
+          }
+        }
+      }
+      .content-main {
+        color: #000;
+        .content-title {
+          font-size: 18px;
+          text-align: left;
+          padding: 60px 0;
+        }
+        .fresh-dynamic {
+          display: flex;
+          justify-content: space-between;
+          li {
+            width: 24%;
+            height: 180px;
+            border: 1px solid #000;
+            margin-bottom: 20px;
+            p {
+              margin-top: 35px;
+              padding: 10px 0;
+              font-size: 16px;
+              font-weight: 700;
+              a {
+                font-size: 16px;
+                font-weight: 400;
+                color: #7395e5;
+              }
+            }
+          }
+        }
 
+        .solution {
+          display: flex;
+          li.solution-item {
+            width: 14%;
+            height: 120px;
+            line-height: 40px;
+            cursor: pointer;
+            .iconfont {
+              width: 80px;
+              height: 80px;
+              margin: 0 auto;
+            }
+            .teardown {
+              background: url("~@/assets/images/main-seven-icon/teardown-02.png")
+                center center no-repeat;
+              background-size: contain;
+            }
+            .performance {
+              background: url("~@/assets/images/main-seven-icon/performance-02.png")
+                center center no-repeat;
+              background-size: contain;
+            }
+            .statistics {
+              background: url("~@/assets/images/main-seven-icon/statistics-02.png")
+                center center no-repeat;
+              background-size: contain;
+            }
+            .section {
+              background: url("~@/assets/images/main-seven-icon/section-02.png")
+                center center no-repeat;
+              background-size: contain;
+            }
+            .costing {
+              background: url("~@/assets/images/main-seven-icon/costing-02.png")
+                center center no-repeat;
+              background-size: contain;
+            }
+            .pq {
+              background: url("~@/assets/images/main-seven-icon/PQ-02.png")
+                center center no-repeat;
+              background-size: contain;
+            }
+            .innovation {
+              background: url("~@/assets/images/main-seven-icon/innovation-02.png")
+                center center no-repeat;
+              background-size: contain;
+            }
+            &:hover {
+              border-radius: 8px;
+              color: #fff;
+              background: linear-gradient(to right, #364ca1 0%, #31ccb1 100%);
+              box-shadow: 5px 5px 5px 5px rgba(67, 74, 80, 1);
+              .teardown {
+                background: url("~@/assets/images/main-seven-icon/teardown-01.png")
+                  center center no-repeat;
+                background-size: contain;
+              }
+              .performance {
+                background: url("~@/assets/images/main-seven-icon/performance-01.png")
+                  center center no-repeat;
+                background-size: contain;
+              }
+              .statistics {
+                background: url("~@/assets/images/main-seven-icon/statistics-01.png")
+                  center center no-repeat;
+                background-size: contain;
+              }
+              .section {
+                background: url("~@/assets/images/main-seven-icon/section-01.png")
+                  center center no-repeat;
+                background-size: contain;
+              }
+              .costing {
+                background: url("~@/assets/images/main-seven-icon/costing-01.png")
+                  center center no-repeat;
+                background-size: contain;
+              }
+              .pq {
+                background: url("~@/assets/images/main-seven-icon/PQ-01.png")
+                  center center no-repeat;
+                background-size: contain;
+              }
+              .innovation {
+                background: url("~@/assets/images/main-seven-icon/innovation-01.png")
+                  center center no-repeat;
+                background-size: contain;
+              }
+            }
+          }
+        }
+        .learn-more-detail {
+          margin: 20px 0;
+        }
 
+        /* modelY视频 */
+        .video-box {
+          height: 600px;
+          width: 100%;
+          background-color: #000;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+          margin-bottom: 50px;
+          .logo {
+            width: 90px;
+            height: 50px;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .title {
+            position: absolute;
+            top: 0px;
+            left: 150px;
+            color: #fff;
+            background-color: rgba(0,0,0,.7);
+            padding: 15px;
+            border-radius: 20px;
+            font-size: 20px;
+            font-family: "宋体";
+          }
+          .iconfont {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+            color: #fff;
+            font-size: 30px;
+          }
+          .video-list {
+            position: absolute;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            height: 100%;
+            width: 300px;
+            transition: right 0.3s;
+            .list-title {
+              padding: 0 20px;
+              height: 60px;
+              line-height: 60px;
+              text-align: left;
+              border-bottom: 1px solid #ccc;
+              position: relative;
+              box-sizing: border-box;
+              .close {
+                font-size: 18px;
+                font-family: "宋体";
+                cursor: pointer;
+                position: absolute;
+                right: 30px;
+                top: 0;
+              }
+              p {
+                line-height: 60px;
+              }
+            }
+            .list {
+              height: calc(100% - 60px);
+              // overflow: hidden auto;
+              li {
+                padding-left: 20px;
+                height: 60px;
+                line-height: 60px;
+                text-align: left;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                cursor: pointer;
+                &.active, &:hover {
+                  color: #007aff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .el-footer {
+      color: #000;
+      height: 300px !important;
+      background: linear-gradient(to right, #364ca1 0%, #31ccb1 100%);
+      position: relative;
+      .foot-contain {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 0 50px 0;
+        box-sizing: border-box;
+        position: relative;
+        color: #fff;
+        ul {
+          li {
+            padding: 5px;
+            line-height: 25px;
+          }
+        }
+        h4 {
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+        .logo {
+          width: 20%;
+          height: 60px;
+          background: url("~@/assets/images/logo.png");
+          background-size: contain;
+        }
+        .quora {
+          width: 20%;
+          height: 100%;
+          text-align: left;
+        }
+        .contact {
+          width: 30%;
+          height: 100%;
+          text-align: left;
+        }
+        .we-chat {
+          width: 20%;
+          height: 100%;
+          .erweima {
+            width: 100px;
+            height: 100px;
+            background: url("~@/assets/images/code.jpg") no-repeat;
+            background-size: contain;
+            margin: 0 auto;
+          }
+        }
+      }
+      .tel {
+        position: fixed;
+        right: 20px;
+        bottom: 40px;
+      }
+    }
   }
+}

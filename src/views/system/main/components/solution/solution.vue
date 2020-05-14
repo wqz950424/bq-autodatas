@@ -14,7 +14,7 @@
       </div>
       <div class="solution-content banxin">
         <h1>竞品对标业务架构</h1>
-        <h3>博奇数据搭建了AUTODATAS智能数据系统，从性能、成本、材料、结构、供应商体系五个维度提供产品定义、架构开发等解决方案。</h3>
+        <div class="h3">博奇数据搭建了AUTODATAS智能数据系统，从性能、成本、材料、结构、供应商体系五个维度提供产品定义、架构开发等解决方案。</div>
         <div class="details">
           <div class="one">
             <h2>技术服务</h2>
@@ -67,6 +67,7 @@
 <script>
 export default {
   name: 'BQSolution',
+  
   data() {
     return {
       searchVal: '',
@@ -116,11 +117,14 @@ export default {
   }
   .solution-content {
     text-align: left;
+    position: relative;
+    padding-bottom: 30px;
     h1 {
       font-size: 24px;
       padding: 20px 0;
+      margin-top: 20px;
     }
-    h3 {
+    .h3 {
       font-size: 16px;
       padding: 20px 0;
     }

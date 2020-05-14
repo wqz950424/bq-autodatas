@@ -13,7 +13,7 @@ const frameIn = [
   {
     path: '/',
     component: layout,
-    redirect: {name: 'index'},
+    redirect: {name: 'default-main'},
     children: [
       {
         path: 'index',

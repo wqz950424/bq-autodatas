@@ -67,20 +67,144 @@
           
         </div>
       </div>
-      <div class="distribute"></div>
-      <bq-copy-right></bq-copy-right>
+      <div class="distribute banxin"></div>
+      <div class="history">
+        <bq-swiper
+          ref="bqSwiper"
+          @subClick="pClick"
+        ></bq-swiper>
+        <div class="list-box banxin">
+          <ul class="list" :style="liStyle">
+            <li @mouseenter="enterImg(0)" @mouseleave="leaveImg(0)">
+              <h1>2010</h1>
+            </li>
+            <li @mouseenter="enterImg(1)" @mouseleave="leaveImg(1)">
+              <h1>2012</h1>
+            </li>
+            <li @mouseenter="enterImg(2)" @mouseleave="leaveImg(2)">
+              <h1>2014</h1>
+            </li>
+            <li @mouseenter="enterImg(3)" @mouseleave="leaveImg(3)">
+              <h1>2016</h1>
+            </li>
+            <li @mouseenter="enterImg(4)" @mouseleave="leaveImg(4)">
+              <h1>2018</h1>
+            </li>
+            <li @mouseenter="enterImg(5)" @mouseleave="leaveImg(5)">
+              <h1>2020</h1>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="autograph banxin">
+        <div class="left">
+          <h3>我们的纪念册</h3>
+          <p>学习博奇文化、探讨企业管理之道、研究技术、共创商业，互相走进属于我们创业路上的苦与乐，我们在一起！</p>
+        </div>
+        <div class="right">
+          <div class="img-box">
+            <img src="~@/assets/images/aboutus/01.jpg" alt="">
+            <div class="cover-box"></div>
+          </div>
+          <div class="img-box">
+            <img src="~@/assets/images/aboutus/02.jpg" alt="">
+            <div class="cover-box"></div>
+          </div>
+          <div class="img-box">
+            <img src="~@/assets/images/aboutus/03.jpg" alt="">
+            <div class="cover-box"></div>
+          </div>
+          <div class="img-box">
+            <img src="~@/assets/images/aboutus/04.jpg" alt="">
+            <div class="cover-box"></div>
+          </div>
+          <div class="img-box">
+            <img src="~@/assets/images/aboutus/05.jpg" alt="">
+            <div class="cover-box"></div>
+          </div>
+          <div class="img-box">
+            <img src="~@/assets/images/aboutus/06.jpg" alt="">
+            <div class="cover-box"></div>
+          </div>
+        </div>
+      </div>
+      <el-backtop target=".bq-main .el-scrollbar__wrap" :bottom="100">
+        <div
+          style="{
+            height: 100%;
+            width: 100%;
+            background: #545c64;
+            box-shadow: 3px 3px 5px 2px rgba(255,255,255, 1);
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            border-radius: 20px;
+          }"
+        >
+          UP
+        </div>
+      </el-backtop>
     </div>
   </el-scrollbar>
 </template>
 
 <script>
-
-import BqCopyRight from '@/components/copy-right'
+import BqSwiper from './bq-swiper'
 export default {
   name: 'BQAboutUs',
   components: {
-    BqCopyRight
+    BqSwiper
   },
+  data() {
+    return {
+      images: [
+        'http://hmiautodatas.oss-cn-shanghai.aliyuncs.com/01.jpg',
+        'http://hmiautodatas.oss-cn-shanghai.aliyuncs.com/02.jpg',
+        'http://hmiautodatas.oss-cn-shanghai.aliyuncs.com/03.jpg',
+        'http://hmiautodatas.oss-cn-shanghai.aliyuncs.com/04.jpg',
+        'http://hmiautodatas.oss-cn-shanghai.aliyuncs.com/05.jpg',
+        'http://hmiautodatas.oss-cn-shanghai.aliyuncs.com/06.jpg',
+      ],
+      listStyle: {
+        left: 0,
+      }
+    }
+  },
+  computed: {
+    liStyle() {
+      return {
+        left: this.listStyle.left + 'px'
+      }
+    }
+  },
+  methods: {
+    pClick(direction) {
+      if(direction === 'right') {
+        this.listStyle.left = this.listStyle.left - 340
+      }
+      if(direction === 'left') {
+        this.listStyle.left = this.listStyle.left + 340
+      }
+    },
+    enterImg(index) {
+      let lis = document.querySelectorAll('.swiper-slide')
+      lis.forEach((item, idx) =>{
+        if(index == idx) {
+          let coverBox = item.querySelector('.cover-img')
+          coverBox.style = "display: none"
+        }
+      })
+    },
+    leaveImg(index) {
+      let lis = document.querySelectorAll('.swiper-slide')
+      lis.forEach((item, idx) =>{
+        if(index == idx) {
+          let coverBox = item.querySelector('.cover-img')
+          coverBox.style = "display: block"
+        }
+      })
+    }
+  }
 }
 </script>
 
@@ -96,7 +220,6 @@ export default {
     .left {
       width: 60%;
       height: 100%;
-      // background-color: red;
       .logo-box {
         display: flex;
         height: 150px;
@@ -138,7 +261,7 @@ export default {
     }
   }
   .global {
-    margin-top: 30px;
+    // margin-top: 30px;
     text-align: left;
     overflow: hidden;
     h1 {
@@ -162,7 +285,7 @@ export default {
         // border: 2px solid #000;
         margin-top: 40px;
         margin-right: 40px;
-        background: linear-gradient(to right, #3d3393 0%, #33da9b 100%);
+        background: linear-gradient(to right, #364CA1 0%, #31CCB1 100%);
         .subcir {
           width:20px;
           height: 20px;
@@ -186,8 +309,87 @@ export default {
     background: url('~@/assets/images/banner/distribute.png');
     background-size: cover;
   }
-  .bq-copy-right  {
-    color: #59595a;
+  .history {
+    padding-top: 50px;
+    .list-box {
+      margin-top: 50px;
+      // width: 100%;
+      overflow: hidden;
+      height: 188px;
+      position: relative;
+    }
+    .list {
+      width: 2500px;
+      height: 188px;
+      position: absolute;
+      // left: 0px;
+      transition: left .3s;
+      li {
+        width: 340px;
+        height: 188px;
+        box-sizing: border-box;
+        border-left: 5px solid #000;
+        float: left;
+        position: relative;
+        &:last-child {
+          border-right: 5px solid #000;
+        }
+        h1 {
+          position: absolute;
+          left: 20px;
+          bottom: 10px;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .autograph {
+    height: 400px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    .left {
+      width: calc(100% - 900px);
+      box-sizing: border-box;
+      padding: 0 20px;
+      h3 {
+        font-size: 20px;
+        padding: 20px;
+      }
+      p {
+        text-align: left;
+        text-indent: 30px;
+        font-size: 18px;
+        line-height: 35px;
+      }
+    }
+    .right {
+      width: 900px;
+      height: 400px;
+      .img-box {
+        width: 300px;
+        height: 200px;
+        float: left;
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+        .cover-box {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background-color: rgba(0,0,0,.4);
+          top: 0;
+        }
+        &:hover .cover-box {
+          display: none;
+        }
+      }
+    }
   }
   a {
     display: block;

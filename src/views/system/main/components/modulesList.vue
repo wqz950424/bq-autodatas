@@ -1,31 +1,31 @@
 <template>
   <ul class="bq-modules-list">
-    <li>
-      <div ref="teardown" class="iconfont teardown" @click="toWhichSolu('teardown')"></div>
+    <li ref="teardown">
+      <div  class="iconfont teardown" @click="toWhichSolu('teardown')"></div>
       <div>Teardown</div>  
     </li>
-    <li>
-      <div ref="performance" class="iconfont performance" @click="toWhichSolu('performance')"></div>
+    <li ref="performance">
+      <div  class="iconfont performance" @click="toWhichSolu('performance')"></div>
       <div>Performance</div>  
     </li>
-    <li>
-      <div ref="section" class="iconfont statistics" @click="toWhichSolu('section')"></div>
+    <li ref="section">
+      <div  class="iconfont statistics" @click="toWhichSolu('section')"></div>
       <div>Section</div>  
     </li>
-    <li>
-      <div ref="pq" class="iconfont section" @click="toWhichSolu('pq')"></div>
+    <li ref="pq">
+      <div  class="iconfont section" @click="toWhichSolu('pq')"></div>
       <div>PQ</div>  
     </li>
-    <li>
-      <div ref="costing" class="iconfont costing" @click="toWhichSolu('costing')"></div>
+    <li ref="costing">
+      <div  class="iconfont costing" @click="toWhichSolu('costing')"></div>
       <div>Costing</div>  
     </li>
-    <li>
-      <div ref="innovation" class="iconfont pq" @click="toWhichSolu('innovation')"></div>
+    <li ref="innovation">
+      <div  class="iconfont pq" @click="toWhichSolu('innovation')"></div>
       <div>Innovation</div>  
     </li>
-    <li>
-      <div ref="statistics" class="iconfont innovation" @click="toWhichSolu('statistics')"></div>
+    <li ref="statistics">
+      <div  class="iconfont innovation" @click="toWhichSolu('statistics')"></div>
       <div>Statistics</div>  
     </li>
   </ul>
@@ -42,14 +42,11 @@ export default {
   },
   data() {
     return {
-      iconStyle: {
-        // color: '#ffd04b',
-        color: '#000',
-      }
+      
     }
   },
   mounted() {
-    this.$refs[this.highLight].style = "color: #ffd04b"
+    this.$refs[this.highLight].style = "background-color: rgba(255,255,255, .2)"
   },
   methods: {
     // 七大解决方案点击跳转
@@ -123,36 +120,40 @@ export default {
       background-size: contain;
     }
     &:hover {
-      color: #fff;
-      .teardown {
-        background: url('~@/assets/images/main-seven-icon/teardown-01.png') center center no-repeat;
-        background-size: contain;
-      }
-      .performance {
-        background: url('~@/assets/images/main-seven-icon/performance-01.png') center center no-repeat;
-        background-size: contain;
-      }
-      .statistics {
-        background: url('~@/assets/images/main-seven-icon/statistics-01.png') center center no-repeat;
-        background-size: contain;
-      }
-      .section {
-        background: url('~@/assets/images/main-seven-icon/section-01.png') center center no-repeat;
-        background-size: contain;
-      }
-      .costing {
-        background: url('~@/assets/images/main-seven-icon/costing-01.png') center center no-repeat;
-        background-size: contain;
-      }
-      .pq {
-        background: url('~@/assets/images/main-seven-icon/PQ-01.png') center center no-repeat;
-        background-size: contain;
-      }
-      .innovation {
-        background: url('~@/assets/images/main-seven-icon/innovation-01.png') center center no-repeat;
-        background-size: contain;
-      }
+      background-color: rgba(255,255,255,0.1);
     }
+
+    // &:hover {
+    //   color: #fff;
+    //   .teardown {
+    //     background: url('~@/assets/images/main-seven-icon/teardown-01.png') center center no-repeat;
+    //     background-size: contain;
+    //   }
+    //   .performance {
+    //     background: url('~@/assets/images/main-seven-icon/performance-01.png') center center no-repeat;
+    //     background-size: contain;
+    //   }
+    //   .statistics {
+    //     background: url('~@/assets/images/main-seven-icon/statistics-01.png') center center no-repeat;
+    //     background-size: contain;
+    //   }
+    //   .section {
+    //     background: url('~@/assets/images/main-seven-icon/section-01.png') center center no-repeat;
+    //     background-size: contain;
+    //   }
+    //   .costing {
+    //     background: url('~@/assets/images/main-seven-icon/costing-01.png') center center no-repeat;
+    //     background-size: contain;
+    //   }
+    //   .pq {
+    //     background: url('~@/assets/images/main-seven-icon/PQ-01.png') center center no-repeat;
+    //     background-size: contain;
+    //   }
+    //   .innovation {
+    //     background: url('~@/assets/images/main-seven-icon/innovation-01.png') center center no-repeat;
+    //     background-size: contain;
+    //   }
+    // }
   }
 }
 </style>
