@@ -14,7 +14,7 @@ Vue.use(VueI18n)
 Vue.use(globalComponents)
 
 Vue.config.productionTip = false
-
+Vue.config.devtools = true
 
 
 const i18n = new VueI18n({

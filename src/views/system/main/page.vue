@@ -1,8 +1,7 @@
 <template>
   <div class="bq-main">
     <el-container style="height: 975px;">
-      <!-- <el-header :style="fixedStyle"> -->
-      <el-header>
+      <el-header class="bqHeader" style="background: linear-gradient(to right, #3d58a2 0%, #31CCB1 100%)">
         <div class="head-nav banxin">
           <div class="logo" @click="toMain" title="回到主页"></div>
           <div class="nav">
@@ -72,22 +71,29 @@ export default {
     return {
       activeIndex: '',
       fixedStyle: {
-        background: 'unset'
+        background: 'transparent'
       },
     }
   },
   mounted() {
-    window.addEventListener('scroll', this.toggleFixedStyle, false)
+    let ele = document.querySelector('.bq-main-default')
+    // ele.addEventListener('mousewheel', this.toggleFixedStyle, false)
   },
   methods: {
     // 顶部固定
     toggleFixedStyle () {
-      let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-      if(scrollTop > 60) {
-        this.fixedStyle.background = 'linear-gradient(to right, #3d58a2 0%, #31CCB1 100%);'
-      } else {
-        this.fixedStyle.background = 'unset'
-      }
+      this.$nextTick(() => {
+        let scrollTop = this.$children[0].$children[1].$refs.defaultScroll.moveY;
+        let ele = document.querySelector('.bqHeader')
+        console.log(ele, +scrollTop.toFixed(0))
+        if(+scrollTop.toFixed(0) < 20) {
+          // ele.style.background = 'linear-gradient(to right, #3d58a2 0%, #31CCB1 100%);'
+          this.fixedStyle.background = 'transparent'
+        } else {
+          // ele.style.background = 'transparent'
+          this.fixedStyle.background = 'linear-gradient(to right, #3d58a2 0%, #31CCB1 100%);'
+        }
+      })
     },
 
     handleSelect(key, keyPath) {
@@ -150,7 +156,7 @@ export default {
     }
   },
   // beforeDestroy() {
-  //   window.removeEventListener('scroll', this.toggleFixedStyle, false)
+  //   window.removeEventListener('mousewheel', this.toggleFixedStyle, false)
   // }
 }
 </script>

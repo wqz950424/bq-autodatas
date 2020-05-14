@@ -1,5 +1,5 @@
 <template>
-  <el-scrollbar class="bq-main-default" style="height:100%">
+  <el-scrollbar class="bq-main-default" style="height:100%" ref="defaultScroll">
     <el-main>
       <!-- 焦点图 -->
       <div class="banner">
@@ -399,6 +399,16 @@ export default {
     }
   },
 
+  computed: {
+    background() {
+      if(this.$refs.defaultScroll.moveY < 60) {
+        return 'unset'
+      }else {
+        return 'linear-gradient(to right, #364ca1 0%, #31ccb1 100%)'
+      }
+    }
+  },
+
   mounted() {
     window.addEventListener('contextmenu', this.contextmenu, false)
   },
@@ -488,9 +498,7 @@ export default {
           })
         }
       })
-    }
-
-
+    },
   }
 }
 </script>

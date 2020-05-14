@@ -7,5 +7,10 @@ module.exports = {
       localeDir: 'locales',
       enableInSFC: true
     }
-  }
+  },
+  configureWebpack: {
+    devtool: '#eval-source-map'
+  },
+
+  lintOnSave: false
 }
