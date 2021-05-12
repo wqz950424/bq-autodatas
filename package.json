@@ -18,7 +18,7 @@
     "sass-loader": "^8.0.2",
     "scss": "^0.2.4",
     "scss-loader": "^0.0.1",
-    "swiper": "^5.3.8",
+    "swiper": "^6.5.1",
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
     "vue-happy-scroll": "^2.1.1",
